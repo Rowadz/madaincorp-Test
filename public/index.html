@@ -19,7 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
   </head>
   <body>
-    <div class="container-fluid" ng-controller="loginCtrl">
+    <div ng-class="{'container-fluid': !user}" ng-controller="loginCtrl">
       <div class="panel panel-default" ng-hide="user">
         <div class="panel-heading">Login</div>
         <div class="panel-body">
