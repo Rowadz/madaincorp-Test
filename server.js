@@ -1,7 +1,7 @@
-var express = require('express')
-var app = express()
-var bodyParser = require('body-parser')
-var staticFiles = require('serve-static')
+const express = require('express')
+const app = express()
+const bodyParser = require('body-parser')
+const staticFiles = require('serve-static')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -20,7 +20,7 @@ app.post('/api/login', function (req, res) {
     const errCred = 'credentials are wrong, please try again later'
     if (req.body.email == '123@123.123') {
       if (req.body.password == '123123') {
-        var user = {
+        const user = {
           name: 'Alex Jones',
           email: req.body.email,
           password: req.body.password,
@@ -38,7 +38,7 @@ app.post('/api/login', function (req, res) {
   }
 })
 
-var serve = staticFiles('public/', { index: ['index.html'] })
+const serve = staticFiles('public/', { index: ['index.html'] })
 app.use(serve)
 
 app.listen(3000)

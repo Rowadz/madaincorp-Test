@@ -8,6 +8,9 @@ This is a list of recommendations to make this project better
 that their credentials are wrong so you don't accidentally help anyone
 trying to steal any account
 
+3. use a in the development, so when you save your code the application 
+will re-run again
+
 2. Add a database to the backend 
 
 3. enable sessions to save that the user logged in, 
