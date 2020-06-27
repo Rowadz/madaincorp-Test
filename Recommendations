@@ -13,15 +13,17 @@ will re-run again
 
 3. Add a database to the backend 
 
-4. enable sessions to save that the user logged in, 
+4. hashing passwords
+
+5. enable sessions to save that the user logged in, 
 currently when the user refreshes the page the session disappears
 
-5. Add register functionality 
+6. Add register functionality 
 
-6. enable routing in the front-end application and split the front-end to a re-usable companents
+7. enable routing in the front-end application and split the front-end to a re-usable companents
 
-7. maybe use webpack and install ( bootstrap - angularjs (1) ) locally and to stop using 
+8. maybe use webpack and install ( bootstrap - angularjs (1) ) locally and to stop using 
 many script tags
 
-8. Enable Cross-origin resource sharing (CORS) in the express app
+9. Enable Cross-origin resource sharing (CORS) in the express app
 
