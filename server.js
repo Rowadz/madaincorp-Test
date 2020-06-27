@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const staticFiles = require('serve-static')
+const User = require('./db')()
+const { hashSync } = require('bcrypt')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -15,21 +17,21 @@ app.use('api/*', (req) => {
   next()
 })
 
-app.post('/api/login', function (req, res) {
+app.post('/api/login', async (req, res) => {
+  const errCred = 'credentials are wrong, please try again later'
   if (req.body && req.body.email && req.body.password) {
-    const errCred = 'credentials are wrong, please try again later'
-    if (req.body.email == '123@123.123') {
-      if (req.body.password == '123123') {
-        const user = {
-          name: 'Alex Jones',
-          email: req.body.email,
-          password: req.body.password,
-          profilePic: 'http://lorempixel.com/500/500/people/',
-        }
-        res.send(200, user)
-      } else {
-        res.send(400, { message: errCred })
+    const { email, password } = req.body
+    const user = await User.findOne({ where: { email }, raw: true })
+    if (!user) {
+      res.send(400, { message: errCred })
+    }
+    if (hashSync(password, user.salt) === user.password) {
+      const user = {
+        name: 'Alex Jones',
+        email,
+        profilePic: 'http://lorempixel.com/500/500/people/',
       }
+      res.send(200, user)
     } else {
       res.send(400, { message: errCred })
     }
