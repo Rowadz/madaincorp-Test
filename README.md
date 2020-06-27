@@ -14,7 +14,7 @@ To log in use:
 To get the project going you will need NPM and NodeJs installed. once that is complete run the following from the project folder
 ````
 > npm install
-> npm start
+> npm run dev
 ````
 
 ## What to change
