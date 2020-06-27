@@ -4,7 +4,7 @@ This is a list of recommendations to make this project better
 
 // Please make your recommendations as clear as possible with only a few sentences 
 
-1. Don't tell the user if his/her password is wrong, just tell them 
+1. Don't tell the user if his/her password/email is wrong, just tell them 
 that their credentials are wrong so you don't accidentally help anyone
 trying to steal any account
 
