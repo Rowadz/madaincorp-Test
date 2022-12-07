@@ -19,8 +19,8 @@
   "homepage": "https://github.com/DanielHindi/makeMeBetter#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "sequelize": "^6.2.2",
     "serve-static": "^1.13.1",
     "sqlite3": "^4.2.0"
